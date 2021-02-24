@@ -1,0 +1,35 @@
+<div style="padding: 15px;">
+	<div>
+		<div class="dropzone" fileDragDrop (filesChangeEmiter)="onFileChange($event)">
+			<div class="text-wrapper">
+				<div class="centered">
+					<input type="file" name="file"
+						accept=".csv,.exl,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+						id="file" (change)="onFileChange($event.target.files)" multiple>
+					<label for="file"><span class="textLink">Select your file</span> or Drop it here!</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div *ngIf="showDelimitorPick">
+	<h6>Seperator</h6>
+	<div *ngFor="let delimiter of delimiters">
+		<mat-checkbox (change)="selectedDelimiter = delimiter" [checked]="selectedDelimiter === delimiter"
+			class="example-margin">{{delimiter}}</mat-checkbox>
+	</div>
+	<form class="example-form">
+		<mat-form-field class="example-full-width">
+			<mat-label>BankName</mat-label>
+			<input matInput placeholder="BankName">
+		</mat-form-field>
+	</form>
+</div>
+<div *ngIf="showDelimitorPick">
+	<mat-checkbox  [(ngModel)]="isMerge">Merge</mat-checkbox>
+</div>
+<button mat-raised-button color="primary" *ngIf="showDelimitorPick && selectedDelimiter"
+	(click)="submit()">Submit</button>
+<div style="margin-left:85%">
+	<button mat-raised-button color="warn" (click)="close()">Close</button>
+</div>

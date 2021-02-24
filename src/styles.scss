@@ -1,0 +1,12 @@
+// Material Theme import
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+// For Bootstrap
+@import '~bootstrap/dist/css/bootstrap.min.css';
+// For handson Table
+@import '~handsontable/dist/handsontable.full.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#hot-display-license-info{
+  display: none;
+}

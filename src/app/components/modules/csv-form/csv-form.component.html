@@ -1,0 +1,9 @@
+<div class="csvButton">
+  <button mat-raised-button color="primary" (click)="openDialog()">
+    <mat-icon>get_app</mat-icon>Upload
+  </button>
+</div>
+<div *ngIf="tableData" id="container">
+  <hot-table #hot [data]="tableData" [settings]="tableSettings" [colHeaders]="tableSettings['columns']"
+     [stretchH]="'all'"></hot-table>
+</div>
