@@ -5,7 +5,7 @@
 // For handson Table
 @import '~handsontable/dist/handsontable.full.css';
 
-html, body { height: 100%; }
+html, body { height: 100%;min-width: 1500px; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 #hot-display-license-info{
   display: none;

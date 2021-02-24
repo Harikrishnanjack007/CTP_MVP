@@ -25,9 +25,11 @@
 		</mat-form-field>
 	</form>
 </div>
-<div *ngIf="showDelimitorPick">
-	<mat-checkbox  [(ngModel)]="isMerge">Merge</mat-checkbox>
-</div>
+<ng-container *ngIf="showDelimitorPick" >
+	<div *ngFor="let delimiters of mergeDis">
+		<mat-checkbox (change)="selectedmergeDis = delimiters" [checked]="selectedmergeDis === delimiters"  [(ngModel)]="isMerge" >{{delimiters}}</mat-checkbox>
+	</div>
+</ng-container>
 <button mat-raised-button color="primary" *ngIf="showDelimitorPick && selectedDelimiter"
 	(click)="submit()">Submit</button>
 <div style="margin-left:85%">

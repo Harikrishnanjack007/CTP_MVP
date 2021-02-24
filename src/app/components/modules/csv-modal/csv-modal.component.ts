@@ -15,10 +15,13 @@ export class CsvModalComponent implements OnInit {
   public files: any[] = [];
   csvAsText: any;
   delimiters = ['Comma'];
+  mergeDis=['Merge']
   data: any;
   headers: any;
   showDelimitorPick = false;
   selectedDelimiter = 'Comma';
+  selectedmergeDis = 'Merge';
+
   newEve: any;
   excel: any;
   file: File;
